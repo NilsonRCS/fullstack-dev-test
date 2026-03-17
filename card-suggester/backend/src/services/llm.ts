@@ -12,15 +12,16 @@ export async function getSuggestions(
   occasion: string,
   relationship: string,
 ): Promise<string[]> {
-  const prompt = `You are a gift card message writer. 
-Generate exactly 3 short, warm, and personal gift card messages (1-2 sentences each) for the following context:
-- Occasion: ${occasion}
-- Relationship between sender and recipient: ${relationship}
+  const prompt = `Você é um escritor de mensagens para cartões-presente.
+Gere exatamente 3 mensagens curtas, calorosas e pessoais (1 a 2 frases cada) em português brasileiro para o seguinte contexto:
+- Ocasião: ${occasion}
+- Relacionamento entre remetente e destinatário: ${relationship}
 
-Rules:
-- Each message must be on its own line, starting with a number and a period (e.g. "1. ...")
-- Do not add any extra explanation or formatting
-- Keep each message under 30 words`;
+Regras:
+- Cada mensagem deve estar em sua própria linha, começando com um número e um ponto (ex: "1. ...")
+- Não adicione explicações ou formatações extras
+- Mantenha cada mensagem com no máximo 30 palavras
+- Escreva em português brasileiro, de forma natural e afetuosa`;
 
   const response = await client.chat.completions.create(
     {

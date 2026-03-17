@@ -6,9 +6,9 @@ const router = Router();
 
 // Mensagens genéricas usadas quando o LLM não está disponível
 const FALLBACK_SUGGESTIONS = [
-  'Wishing you all the best on this special occasion!',
-  'Hope this little gift brings a big smile to your face.',
-  'Thinking of you and sending lots of love your way!',
+  'Que este presente seja um pequeno símbolo do quanto você significa para mim!',
+  'Espero que esse presente traga um grande sorriso ao seu rosto. Você merece!',
+  'Com carinho e afeto, desejo a você tudo de melhor nessa ocasião especial!',
 ];
 
 router.post('/', async (req: Request, res: Response) => {
